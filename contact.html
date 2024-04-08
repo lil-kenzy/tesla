@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="application-name" content="Tesla" />
+  <script src="https://code.jquery.com/jquery-3.6.1.slim.js"
+    integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electric Cars, Solar & Clean Energy</title>
+  <link rel="icon" href="img/top icon.png" />
+  <link rel="stylesheet" href="http://www.w3.org/2000/svg" />
+  <link rel="stylesheet" href="contact.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <section id="header">
+    <a href="index.html"><svg class="logo" width="120px" viewBox="0 0 342 35" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M0 .1a9.7 9.7 0 0 0 7 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 0 0 7-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 0 0 6-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 0 0-8.7 7h39.9v-21h-31.2v-7h24zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 13.8h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 14.1h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zM308.5 7h26a9.6 9.6 0 0 0 7-7h-40a9.6 9.6 0 0 0 7 7z"
+          fill="currentColor"></path>
+      </svg></a>
+    <div>
+      <ol id="navbar">
+        <li><a title="Model S" href="modelS.html">Model S</a></li>
+        <li><a title="Model 3" href="index.html">Model 3</a></li>
+        <li><a title="Model X" href="modelX.html">Model X</a></li>
+        <li><a title="Model Y" href="modelY.html">Model Y</a></li>
+        <li>
+          <a title="Solar roof" href="https://www.tesla.com/energy/design">Solar Roof</a>
+        </li>
+        <li>
+          <a title="Solar panel" href="https://www.tesla.com/energy/design">Solar Panel</a>
+        </li>
+        <a href="#" id="close" class="fa fa-times"></a>
+      </ol>
+    </div>
+    <div id="mobile">
+      <h5 id="menu" class="menu">Menu</h5>
+    </div>
+    <ul id="navbar2">
+      <li><a href="https://shop.tesla.com/">Shop</a></li>
+      <li><a href="OrderModel3.html">Account</a></li>
+      <li><a href="OrderModel3.html">Menu</a></li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <div class="content">
+      <h2>Contact Us</h2>
+    </div>
+    <div class="container">
+      <div class="contactInfo">
+        <div class="box">
+          <div class="icon"><i class="fa fa-map-pin"></i></div>
+          <div class="text">
+            <h3>Address</h3>
+            <p>Gigafactory Texas at 13101 Harold Green Road,<br />Austin, Texas 78725</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="icon"><a href="Tel: +233 055 123 1300"><i class="fa fa-phone"></i></div></a>
+          <div class="text">
+            <h3>Phone</h3>
+            <p>+1 510-626-1568</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="icon"><i class="fa fa-envelope"></i></div>
+          <div class="text">
+            <h3>Email</h3>
+            <p>mail@tesla.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contactForm">
+        <form onsubmit="sendEmail(); reset(); return false;">
+          <h2>Send Message</h2>
+          <div class="inputBox">
+            <input type="text" id="fullname" required="required">
+            <span>Full Name</span>
+          </div>
+          <div class="inputBox">
+            <input type="text" id="email" required="required">
+            <span>Email</span>
+          </div>
+          <div class="inputBox">
+            <textarea id="message" required="required"></textarea>
+            <span>Type your Message...</span>
+          </div>
+          <div class="inputBox">
+            <input type="submit" name="" value="send">
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function sendEmail() {
+      Email.send({
+        Host: "smtp.gmail.com",
+        Username: "Username",
+        Password: "Password",
+        To: 'them@website',
+        From: document.getElementById("email").value,
+        Subject: "New Contact Form",
+        Body: "Fullname: " + document.getElementById("fullname").value
+          + "<br> Email: " + document.getElementById("email").value
+          + "<br> Message: " + document.getElementById("message").value
+      }).then(
+        message => alert("Message sent successfully")
+      );
+    }
+  </script>
+</body>
+
+</html>
