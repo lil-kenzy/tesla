@@ -1,0 +1,2309 @@
+<html dir="ltr" lang="en-US">
+  <head>
+    <style>
+      .pac-container {
+        background-color: #fff;
+        position: absolute !important;
+        z-index: 1000;
+        border-radius: 2px;
+        border-top: 1px solid #d9d9d9;
+        font-family: Arial, sans-serif;
+        -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+      .pac-logo:after {
+        content: "";
+        padding: 1px 1px 1px 0;
+        height: 18px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        text-align: right;
+        display: block;
+        background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3.png);
+        background-position: right;
+        background-repeat: no-repeat;
+        -webkit-background-size: 120px 14px;
+        background-size: 120px 14px;
+      }
+      .hdpi.pac-logo:after {
+        background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white3_hdpi.png);
+      }
+      .pac-item {
+        cursor: default;
+        padding: 0 4px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        line-height: 30px;
+        text-align: left;
+        border-top: 1px solid #e6e6e6;
+        font-size: 11px;
+        color: #515151;
+      }
+      .pac-item:hover {
+        background-color: #fafafa;
+      }
+      .pac-item-selected,
+      .pac-item-selected:hover {
+        background-color: #ebf2fe;
+      }
+      .pac-matched {
+        font-weight: 700;
+      }
+      .pac-item-query {
+        font-size: 13px;
+        padding-right: 3px;
+        color: #000;
+      }
+      .pac-icon {
+        width: 15px;
+        height: 20px;
+        margin-right: 7px;
+        margin-top: 6px;
+        display: inline-block;
+        vertical-align: top;
+        background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png);
+        -webkit-background-size: 34px 34px;
+        background-size: 34px;
+      }
+      .hdpi .pac-icon {
+        background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons_hdpi.png);
+      }
+      .pac-icon-search {
+        background-position: -1px -1px;
+      }
+      .pac-item-selected .pac-icon-search {
+        background-position: -18px -1px;
+      }
+      .pac-icon-marker {
+        background-position: -1px -161px;
+      }
+      .pac-item-selected .pac-icon-marker {
+        background-position: -18px -161px;
+      }
+      .pac-placeholder {
+        color: gray;
+      }
+      sentinel {
+      }
+    </style>
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.google-analytics.com/plugins/ua/linkid.js"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-KFP8T9JWYJ&amp;l=dataLayer&amp;cx=c"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="https://static.ads-twitter.com/uwt.js"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.googletagmanager.com/gtag/destination?id=AW-11140901108&amp;l=dataLayer&amp;cx=c"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.google-analytics.com/analytics.js"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.googletagmanager.com/gtag/destination?id=G-KFP8T9JWYJ&amp;l=dataLayer&amp;cx=c"
+    ></script>
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtm.js?id=GTM-KMG5DM"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="//cdn3.optimizely.com/js/geo4.js"
+    ></script>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+      name="viewport"
+    />
+    <link href="https://www.tesla.com/energy/design" rel="canonical" />
+    <link
+      href="https://www.tesla.com/energy/design"
+      hreflang="x-default"
+      rel="alternate"
+    />
+    <link
+      href="https://www.tesla.com/energy/design"
+      hreflang="en-US"
+      rel="alternate"
+    />
+    <title>Design your Solar + Powerwall system | Tesla</title>
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_640/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 640w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_750/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 750w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_828/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 828w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1080/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 1080w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1200/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 1200w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1920/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 1920w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_2048/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 2048w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_3840/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 3840w"
+      imagesizes="100vw"
+    />
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_640/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 640w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_750/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 750w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_828/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 828w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1080/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 1080w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1200/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 1200w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1920/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 1920w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_2048/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 2048w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_3840/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 3840w"
+      imagesizes="100vw"
+    />
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_640/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 640w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_750/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 750w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_828/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 828w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1080/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 1080w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1200/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 1200w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1920/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 1920w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_2048/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 2048w, https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_3840/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 3840w"
+      imagesizes="100vw"
+    />
+    <meta name="next-head-count" content="9" />
+    <link href="/energy/assets/favicon.ico" rel="icon" />
+    <meta charset="utf-8" />
+    <meta
+      content="https://digitalassets.tesla.com/image/upload/prod/fulfillment/energy/Order/EnergyConfigurator/configurator-social-card.png"
+      property="og:image:secure_url"
+    />
+    <meta
+      content="https://digitalassets.tesla.com/image/upload/prod/fulfillment/energy/Order/EnergyConfigurator/configurator-social-card.png"
+      property="og:image:url"
+    />
+    <meta
+      content="https://digitalassets.tesla.com/image/upload/prod/fulfillment/energy/Order/EnergyConfigurator/configurator-social-card.png"
+      property="og:image"
+    />
+    <meta
+      content="Design your Solar + Powerwall system | Tesla"
+      property="og:title"
+    />
+    <meta content="website" property="og:type" />
+    <meta content="https://www.tesla.com/energy/design" property="og:url" />
+    <meta
+      content="Design and order solar to take control of your home's energy production and immediately save on your utility bill."
+      name="description"
+      property="og:description"
+    />
+    <meta content="Tesla" property="og:site_name" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="@tesla" name="twitter:creator" />
+    <meta
+      content="Design and order solar to take control of your home's energy production and immediately save on your utility bill."
+      name="twitter:description"
+    />
+    <meta
+      content="https://digitalassets.tesla.com/image/upload/prod/fulfillment/energy/Order/EnergyConfigurator/configurator-social-card.png"
+      name="twitter:image"
+    />
+    <meta content="@tesla" name="twitter:site" />
+    <meta
+      content="Design your Solar + Powerwall system | Tesla"
+      name="twitter:title"
+    />
+    <meta content="https://www.tesla.com/energy/design" name="twitter:url" />
+    <meta content="#cc0000" name="msapplication-TileColor" />
+    <meta
+      content="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/mstile-144x144.png"
+      name="msapplication-TileImage"
+    />
+    <meta content="#000000" name="theme-color" />
+    <link
+      href="https://digitalassets.tesla.com/image/upload/prod/fulfillment/energy/Order/EnergyConfigurator/configurator-social-card.png"
+      rel="image_src"
+    />
+    <link
+      href="https://www.tesla.com/cua/assets/apps/oceana/chat-ui.css"
+      media="all"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      href="/energy-config/_next/static/css/90fb1b4806e745b0.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="/energy-config/_next/static/css/90fb1b4806e745b0.css"
+      data-n-g=""
+    />
+    <link
+      rel="preload"
+      href="/energy-config/_next/static/css/71a83790c962e836.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="/energy-config/_next/static/css/71a83790c962e836.css"
+      data-n-p=""
+    />
+    <noscript data-n-css=""></noscript>
+    <script
+      defer=""
+      nomodule=""
+      src="/energy-config/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"
+    ></script>
+    <script
+      id="cookie-banner-script"
+      src="https://digitalassets.tesla.com/raw/upload/emea-market-assets/prod/cookie-banner.js"
+      type="text/javascript"
+      defer=""
+      data-nscript="beforeInteractive"
+    ></script>
+    <script
+      src="/energy-config/_next/static/chunks/webpack-b359b95b82330e7f.js"
+      defer=""
+    ></script>
+    <script
+      src="/energy-config/_next/static/chunks/framework-ca706bf673a13738.js"
+      defer=""
+    ></script>
+    <script
+      src="/energy-config/_next/static/chunks/main-5319dc10639d4e21.js"
+      defer=""
+    ></script>
+    <script
+      src="/energy-config/_next/static/chunks/pages/_app-9091e4c5015ada59.js"
+      defer=""
+    ></script>
+    <script
+      src="/energy-config/_next/static/chunks/4857-718e6fc1657b6bd7.js"
+      defer=""
+    ></script>
+    <script
+      src="/energy-config/_next/static/chunks/6638-b8f5690ed6049de0.js"
+      defer=""
+    ></script>
+    <script
+      src="/energy-config/_next/static/chunks/775-e3b93d6ddbb43bfc.js"
+      defer=""
+    ></script>
+    <script
+      src="/energy-config/_next/static/chunks/pages/energy/design-b515e51cbebaa6a6.js"
+      defer=""
+    ></script>
+    <script
+      src="/energy-config/_next/static/IEBYw4Hm1A-nPwQYNu8TX/_buildManifest.js"
+      defer=""
+    ></script>
+    <script
+      src="/energy-config/_next/static/IEBYw4Hm1A-nPwQYNu8TX/_ssgManifest.js"
+      defer=""
+    ></script>
+    <style data-styled="active" data-styled-version="6.0.8"></style>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="https://maps.googleapis.com/maps-api-v3/api/js/56/12a/common.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="https://maps.googleapis.com/maps-api-v3/api/js/56/12a/util.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="https://maps.googleapis.com/maps-api-v3/api/js/56/12a/controls.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="https://maps.googleapis.com/maps-api-v3/api/js/56/12a/places_impl.js"
+    ></script>
+    <meta
+      http-equiv="origin-trial"
+      content="A4oIpR6f5aUXFRMbL6t6qaMk4lrHWxcV3DcrzORsA9sEsIk1FBRMFzzhfMNLuUpokZH40FV8s7iiXtt/729v8A4AAACFeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiQXR0cmlidXRpb25SZXBvcnRpbmdDcm9zc0FwcFdlYiIsImV4cGlyeSI6MTcxNDUyMTU5OSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="
+    />
+    <script
+      attributionsrc=""
+      type="text/javascript"
+      async=""
+      src="https://www.googleadservices.com/pagead/conversion/11140901108/?random=1719083912449&amp;cv=11&amp;fst=1719083912449&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be46j0v9118038826z871779169za201zb71779169&amp;gcs=G111&amp;gcd=13n3n3n3n5&amp;dma=0&amp;tag_exp=0&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fwww.tesla.com%2Fenergy%2Fdesign&amp;ref=https%3A%2F%2Fwww.tesla.com%2F&amp;label=jj6eCN_Ey74YEPTRssAp&amp;hn=www.googleadservices.com&amp;frm=0&amp;tiba=Design%20your%20Solar%20%2B%20Powerwall%20system%20%7C%20Tesla&amp;value=0&amp;bttype=purchase&amp;npa=0&amp;auid=2128192499.1719081700&amp;uaa=x86&amp;uab=64&amp;uafvl=Not%252FA)Brand%3B8.0.0.0%7CChromium%3B126.0.6478.61%7CGoogle%2520Chrome%3B126.0.6478.61&amp;uamb=0&amp;uam=&amp;uap=Windows&amp;uapv=10.0.0&amp;uaw=0&amp;fledge=1&amp;capi=1&amp;data=ads_data_redaction%3Dfalse&amp;rfmt=3&amp;fmt=4"
+    ></script>
+  </head>
+  <body>
+    <div class="tdsMegaMenu" id="tds-site-header-wrapper" style="display: none">
+      <div id="mega-menu"></div>
+    </div>
+    <div id="__next">
+      <main class="styles_energyConfiguratorContainer__GlHeP">
+        <div
+          aria-hidden="true"
+          aria-label="Loading"
+          class="tds-loader tds-loader--fullscreen"
+          style="z-index: 12"
+        >
+          <svg
+            class="tds-icon tds-icon-loader"
+            viewBox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="currentColor"
+              d="M24 1a2.347 2.347 0 1 1 0 4.694 18.306 18.306 0 1 0 13.359 5.792 2.347 2.347 0 1 1 3.426-3.21A23 23 0 1 1 24 1"
+            ></path></svg
+          ><svg
+            class="tds-icon tds-icon-logo"
+            viewBox="0 0 160 160"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g fill="currentColor">
+              <path
+                d="m80 129.8 14-78.7c13.3 0 17.5 1.5 18.1 7.4 0 0 8.9-3.3 13.5-10.1-17.6-8.1-35.3-8.5-35.3-8.5L80 52.5 69.7 39.9s-17.7.4-35.3 8.5c4.5 6.8 13.5 10.1 13.5 10.1.6-6 4.8-7.4 18.1-7.4z"
+              ></path>
+              <path
+                d="M80 36.3c14.2-.1 30.5 2.2 47.2 9.5 2.2-4 2.8-5.8 2.8-5.8-18.2-7.3-35.3-9.7-50-9.8-14.7.1-31.8 2.5-50 9.8 0 0 .8 2.2 2.8 5.8 16.7-7.3 33-9.6 47.2-9.5"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <div
+          class="styles_globalNavigationHeader__CXCoo"
+          id="navigation-header"
+        >
+          <div class="styles_globalSiteHeader__3P3n_">
+            <div class="tds-global-menu" id="tds-global-menu">
+              <header
+                class="tds-site-header tds--fade-in"
+                id="tds-site-header"
+                style="
+                  --tds-animate-backdrop-transition: opacity 0.5s ease,
+                    visibility 0s 0.5s;
+                  --tds-animate-backdrop-opacity: 0;
+                  --tds-animate-backdrop-visibility: hidden;
+                "
+              >
+                <div class="tds-animate--backdrop-backdrop"></div>
+                <h1 class="tds-site-logo tds-align--start">
+                  <a aria-label="Tesla Logo" class="tds-site-logo-link" href="/"
+                    ><svg
+                      class="tds-icon tds-icon-logo-wordmark tds-site-logo-icon"
+                      viewBox="0 0 342 35"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M0 .1a9.7 9.7 0 0 0 7 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 0 0 7-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 0 0 6-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 0 0-8.7 7h39.9v-21h-31.2v-7zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7m0 13.8h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7m0 14.1h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7M308.5 7h26a9.6 9.6 0 0 0 7-7h-40a9.6 9.6 0 0 0 7 7"
+                      ></path></svg
+                    ><span class="tds--is_visually_hidden"
+                      >Tesla homepage</span
+                    ></a
+                  ><a
+                    class="tds-skip-to-content tds--is_visually_hidden"
+                    href="#main-content"
+                    id="top-of-page"
+                    >Skip to main content</a
+                  >
+                </h1>
+                <ol class="tds-site-nav-items tds-align--end tds--product-name">
+                  <li>
+                    <button
+                      type="button"
+                      title="Locale Selector"
+                      action="localeSelector"
+                      special="localeSelectorNavItem"
+                      class="tds-site-nav-item tds--product-name"
+                    >
+                      <svg
+                        class="tds-icon tds-icon-globe"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10M9.254 20.047a8 8 0 0 1-.768-1.378c-.404-.91-.722-1.985-.935-3.169h-3.3a8.53 8.53 0 0 0 5.003 4.547m.603-1.988c.336.757.718 1.324 1.103 1.69.382.364.732.501 1.04.501s.658-.137 1.04-.5c.385-.367.767-.934 1.103-1.69.321-.723.588-1.59.78-2.56H9.076c.192.97.459 1.837.78 2.56ZM8.75 12q.001 1.038.103 2h6.294q.102-.962.103-2-.001-1.038-.103-2H8.853q-.102.962-.103 2m-1.405-2H3.737a8.5 8.5 0 0 0-.237 2c0 .689.082 1.359.237 2h3.608a21 21 0 0 1 0-4m1.732-1.5h5.845c-.19-.97-.458-1.837-.779-2.56-.336-.756-.718-1.323-1.103-1.69-.382-.363-.732-.5-1.04-.5s-.658.137-1.04.5c-.385.367-.767.934-1.103 1.69-.321.723-.588 1.59-.78 2.56m7.577 1.5a20.7 20.7 0 0 1 0 4h3.61a8.5 8.5 0 0 0 .236-2 8.5 8.5 0 0 0-.237-2zm3.094-1.5a8.53 8.53 0 0 0-5.002-4.547c.287.408.543.873.768 1.378.404.91.722 1.985.935 3.169h3.3Zm-12.197 0c.213-1.184.531-2.26.935-3.169.225-.505.48-.97.768-1.378A8.53 8.53 0 0 0 4.252 8.5zm7.963 10.169c-.225.505-.48.97-.768 1.378a8.53 8.53 0 0 0 5.002-4.547h-3.3c-.212 1.184-.53 2.26-.934 3.169"
+                        ></path></svg
+                      ><span class="tds-site-nav-item-text">US</span>
+                    </button>
+                  </li>
+                </ol>
+              </header>
+              <dialog
+                aria-hidden="true"
+                class="tds-modal tds-modal--sheet-right tds-site-header-modal tds-modal--sheet-small tds-scrim--white"
+                style=""
+              >
+                <div class="tds-modal-header">
+                  <button
+                    aria-label="Close Modal"
+                    class="tds-modal-close"
+                    type="button"
+                  >
+                    <svg
+                      class="tds-icon tds-icon-close tds-modal-close-icon"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M18.53 17.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06 0 .75.75 0 0 1 0-1.06L10.94 12 5.47 6.53a.75.75 0 1 1 1.06-1.06L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+                <section class="tds-modal-content"></section>
+              </dialog>
+              <div class="tds-modal-backdrop"></div>
+            </div>
+          </div>
+        </div>
+        <main id="main-content">
+          <div class="styles_galleryContainer__V3_QY" style="min-height: 547px">
+            <div
+              class="styles_imagesContainer__eC4Bn"
+              id="images-container"
+            ></div>
+            <div class="styles_contentContainer__TFtSt">
+              <div
+                data-conent-id="landing-page"
+                data-name="content"
+                id="landing-page"
+              >
+                <div class="styles_mobileImageContainer__T6gF7">
+                  <div
+                    class="styles_mobileContainer__Y0EMG"
+                    style="height: 45vh; overflow: unset"
+                  >
+                    <video
+                      autoplay=""
+                      class="styles_heroContentVideo__6mI3B"
+                      id="landing-page-hero-video_m"
+                      loop=""
+                      playsinline=""
+                      src="https://digitalassets.tesla.com/video/upload/q_auto/f_auto:video/prod/fulfillment/energy/Order/EnergyConfigurator/landing-page-hero-video_m"
+                      title="Desktop hero video"
+                      style="object-fit: contain"
+                    ></video>
+                  </div>
+                </div>
+                <div
+                  class="styles_content__QBZf_ styles_contentMoreBottomPadding__8kb4q"
+                >
+                  <div class="styles_landingPageContainer__OyqQf">
+                    <div class="styles_headerContainer__56dGf">
+                      <span
+                        class="tds-text--h1 styles_header__xjQ0y tds-text--h1-alt"
+                        >Power Everything</span
+                      ><span class="">Enter Home Details</span>
+                    </div>
+                    <div
+                      class="tds-form-item styles_homeAddress__EfYnA"
+                      data-test="home-address-input"
+                    >
+                      <label
+                        class="tds-form-label tds-text--contrast-medium"
+                        for="landing-page-installationAddress"
+                        >Home Address</label
+                      >
+                      <div
+                        class="tds-form-input tds-form-input--default styles_formText__eVUuI"
+                      >
+                        <input
+                          class="tds-form-input-text pac-target-input"
+                          id="landing-page-installationAddress"
+                          placeholder=""
+                          value=""
+                          autocomplete="off"
+                        />
+                        <div class="tds-form-input-trailing">
+                          <button
+                            aria-label="geolocate your address"
+                            class="styles_geolocateButton__gpBwR"
+                            type="button"
+                            style="cursor: pointer"
+                          >
+                            <svg
+                              class="tds-icon tds-icon-crosshair"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                fill="currentColor"
+                                d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18m.75 16.462V15.75a.75.75 0 0 0-1.5 0v3.712a7.51 7.51 0 0 1-6.712-6.712H8.25a.75.75 0 0 0 0-1.5H4.538a7.51 7.51 0 0 1 6.712-6.712V8.25a.75.75 0 0 0 1.5 0V4.538a7.51 7.51 0 0 1 6.712 6.712H15.75a.75.75 0 0 0 0 1.5h3.712a7.51 7.51 0 0 1-6.712 6.712"
+                              ></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="tds-form-item styles_electricBillInput__XZOhP"
+                      data-test="electric-bill-input"
+                    >
+                      <label
+                        class="tds-form-label tds-text--contrast-medium"
+                        for="electricBill"
+                        >Average Electric Bill</label
+                      >
+                      <p
+                        class="tds-text--contrast-low styles_electricBillSubLabel__kCWjw"
+                      >
+                        One electric bill required
+                      </p>
+                      <div class="tds-form-input tds-form-input--default">
+                        <input
+                          class="tds-form-input-text"
+                          id="electricBill"
+                          inputmode="decimal"
+                          type="text"
+                          value=""
+                        />
+                        <div class="tds-form-input-trailing">/&nbsp;mo</div>
+                      </div>
+                      <div class="tds-form-feedback">
+                        <div class="tds-form-helper-text"></div>
+                        <div class="tds-form-feedback-text"></div>
+                      </div>
+                    </div>
+                    <div class="styles_consumptionInputSwitch__tCjoc">
+                      <span class=""
+                        >Know your average monthly consumption?</span
+                      ><a class="tds-link">Enter your kWh</a>
+                    </div>
+                    <div
+                      class="styles_productSelectionSection__uXllw"
+                      id="product-selection"
+                    >
+                      <div class="styles_headingSection__bl0OP">
+                        <span class="tds-text--h3">Choose a Product</span
+                        ><button class="tds-link">Help Me Choose Solar</button>
+                      </div>
+                      <div
+                        class="tds-card tds-scrim--black tds-scrim--gradient styles_container__vW0h9"
+                      >
+                        <span class="tds-text--h5 styles_heading__Vam28"
+                          >30% Federal Tax Credit</span
+                        ><span class=""
+                          >Solar and Powerwall orders qualify for a federal tax
+                          credit.
+                          <div class="styles_link__EYLDw tds-scrim--black">
+                            <a
+                              class="tds-link"
+                              href="/support/incentives"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                              >See Details</a
+                            >
+                          </div></span
+                        >
+                      </div>
+                      <div class="styles_productCardsSection__pPMaL">
+                        <div
+                          class="tds-card tds-card--outline styles_productCard__HX4Fo"
+                          id="Powerwall"
+                        >
+                          <div class="tds-card-body">
+                            <div class="styles_productImageContainer___3CzA">
+                              <div class="styles_nextImage__9glHs">
+                                <div class="sc-7826a1e1-0 eJLHXr">
+                                  <span
+                                    style="
+                                      box-sizing: border-box;
+                                      display: block;
+                                      overflow: hidden;
+                                      width: initial;
+                                      height: initial;
+                                      background: none;
+                                      opacity: 1;
+                                      border: 0px;
+                                      margin: 0px;
+                                      padding: 0px;
+                                      position: absolute;
+                                      inset: 0px;
+                                    "
+                                    ><img
+                                      alt=""
+                                      sizes="100vw"
+                                      srcset="
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_640/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image   640w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_750/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image   750w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_828/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image   828w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1080/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 1080w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1200/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 1200w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1920/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 1920w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_2048/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 2048w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_3840/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 3840w
+                                      "
+                                      src="https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_3840/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image"
+                                      decoding="async"
+                                      data-nimg="fill"
+                                      class="styles_showImage__XbgsO"
+                                      style="
+                                        position: absolute;
+                                        inset: 0px;
+                                        box-sizing: border-box;
+                                        padding: 0px;
+                                        border: none;
+                                        margin: auto;
+                                        display: block;
+                                        width: 0px;
+                                        height: 0px;
+                                        min-width: 100%;
+                                        max-width: 100%;
+                                        min-height: 100%;
+                                        max-height: 100%;
+                                        object-fit: cover;
+                                        object-position: center center;
+                                      "
+                                  /></span>
+                                </div>
+                                <div class="sc-7826a1e1-0 fDjSQn">
+                                  <span
+                                    style="
+                                      box-sizing: border-box;
+                                      display: block;
+                                      overflow: hidden;
+                                      width: initial;
+                                      height: initial;
+                                      background: none;
+                                      opacity: 1;
+                                      border: 0px;
+                                      margin: 0px;
+                                      padding: 0px;
+                                      position: absolute;
+                                      inset: 0px;
+                                    "
+                                    ><img
+                                      alt=""
+                                      sizes="100vw"
+                                      srcset="
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_640/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image   640w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_750/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image   750w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_828/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image   828w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1080/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 1080w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1200/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 1200w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1920/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 1920w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_2048/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 2048w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_3840/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image 3840w
+                                      "
+                                      src="https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_3840/prod/fulfillment/energy/Order/EnergyConfigurator/pw-selector-image"
+                                      decoding="async"
+                                      data-nimg="fill"
+                                      class="styles_showImage__XbgsO"
+                                      style="
+                                        position: absolute;
+                                        inset: 0px;
+                                        box-sizing: border-box;
+                                        padding: 0px;
+                                        border: none;
+                                        margin: auto;
+                                        display: block;
+                                        width: 0px;
+                                        height: 0px;
+                                        min-width: 100%;
+                                        max-width: 100%;
+                                        min-height: 100%;
+                                        max-height: 100%;
+                                        object-fit: cover;
+                                      "
+                                  /></span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="styles_productCardContent__tNT90">
+                              <div class="styles_productSummary__uzYKz">
+                                <span class="tds-text--h6">Powerwall Only</span>
+                              </div>
+                              <span
+                                class="tds-text--contrast-low styles_productCardCaption__BShvb"
+                                >Energy backup for your home</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="tds-card tds-card--outline styles_productCard__HX4Fo styles_selectedProduct__Kpu46"
+                          id="solarpanels"
+                        >
+                          <div class="tds-card-body">
+                            <div class="styles_productImageContainer___3CzA">
+                              <div class="styles_nextImage__9glHs">
+                                <div class="sc-7826a1e1-0 eJLHXr">
+                                  <span
+                                    style="
+                                      box-sizing: border-box;
+                                      display: block;
+                                      overflow: hidden;
+                                      width: initial;
+                                      height: initial;
+                                      background: none;
+                                      opacity: 1;
+                                      border: 0;
+                                      margin: 0;
+                                      padding: 0;
+                                      position: absolute;
+                                      top: 0;
+                                      left: 0;
+                                      bottom: 0;
+                                      right: 0;
+                                    "
+                                    ><img
+                                      alt=""
+                                      sizes="100vw"
+                                      srcset="
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_640/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop   640w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_750/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop   750w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_828/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop   828w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1080/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 1080w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1200/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 1200w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1920/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 1920w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_2048/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 2048w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_3840/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 3840w
+                                      "
+                                      src="https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_3840/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop"
+                                      decoding="async"
+                                      data-nimg="fill"
+                                      class="styles_showImage__XbgsO"
+                                      style="
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        bottom: 0;
+                                        right: 0;
+                                        box-sizing: border-box;
+                                        padding: 0;
+                                        border: none;
+                                        margin: auto;
+                                        display: block;
+                                        width: 0;
+                                        height: 0;
+                                        min-width: 100%;
+                                        max-width: 100%;
+                                        min-height: 100%;
+                                        max-height: 100%;
+                                        object-fit: cover;
+                                        object-position: center;
+                                      "
+                                  /></span>
+                                </div>
+                                <div class="sc-7826a1e1-0 fDjSQn">
+                                  <span
+                                    style="
+                                      box-sizing: border-box;
+                                      display: block;
+                                      overflow: hidden;
+                                      width: initial;
+                                      height: initial;
+                                      background: none;
+                                      opacity: 1;
+                                      border: 0;
+                                      margin: 0;
+                                      padding: 0;
+                                      position: absolute;
+                                      top: 0;
+                                      left: 0;
+                                      bottom: 0;
+                                      right: 0;
+                                    "
+                                    ><img
+                                      alt=""
+                                      sizes="100vw"
+                                      srcset="
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_640/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop   640w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_750/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop   750w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_828/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop   828w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1080/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 1080w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1200/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 1200w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1920/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 1920w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_2048/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 2048w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_3840/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop 3840w
+                                      "
+                                      src="https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_3840/prod/fulfillment/energy/Order/EnergyConfigurator/pv-selector-image-desktop"
+                                      decoding="async"
+                                      data-nimg="fill"
+                                      class="styles_showImage__XbgsO"
+                                      style="
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        bottom: 0;
+                                        right: 0;
+                                        box-sizing: border-box;
+                                        padding: 0;
+                                        border: none;
+                                        margin: auto;
+                                        display: block;
+                                        width: 0;
+                                        height: 0;
+                                        min-width: 100%;
+                                        max-width: 100%;
+                                        min-height: 100%;
+                                        max-height: 100%;
+                                        object-fit: cover;
+                                      "
+                                  /></span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="styles_productCardContent__tNT90">
+                              <div class="styles_productSummary__uzYKz">
+                                <span class="tds-text--h6"
+                                  >Solar Panels + Powerwall</span
+                                >
+                              </div>
+                              <span
+                                class="tds-text--contrast-low styles_productCardCaption__BShvb"
+                                >Panels for your existing roof with
+                                backup&nbsp;protection</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="tds-card tds-card--outline styles_productCard__HX4Fo"
+                          id="solarroof"
+                        >
+                          <div class="tds-card-body">
+                            <div class="styles_productImageContainer___3CzA">
+                              <div class="styles_nextImage__9glHs">
+                                <div class="sc-7826a1e1-0 eJLHXr">
+                                  <span
+                                    style="
+                                      box-sizing: border-box;
+                                      display: block;
+                                      overflow: hidden;
+                                      width: initial;
+                                      height: initial;
+                                      background: none;
+                                      opacity: 1;
+                                      border: 0;
+                                      margin: 0;
+                                      padding: 0;
+                                      position: absolute;
+                                      top: 0;
+                                      left: 0;
+                                      bottom: 0;
+                                      right: 0;
+                                    "
+                                    ><img
+                                      alt=""
+                                      sizes="100vw"
+                                      srcset="
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_640/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop   640w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_750/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop   750w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_828/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop   828w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1080/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 1080w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1200/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 1200w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1920/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 1920w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_2048/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 2048w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_3840/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 3840w
+                                      "
+                                      src="https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_3840/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop"
+                                      decoding="async"
+                                      data-nimg="fill"
+                                      class="styles_showImage__XbgsO"
+                                      style="
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        bottom: 0;
+                                        right: 0;
+                                        box-sizing: border-box;
+                                        padding: 0;
+                                        border: none;
+                                        margin: auto;
+                                        display: block;
+                                        width: 0;
+                                        height: 0;
+                                        min-width: 100%;
+                                        max-width: 100%;
+                                        min-height: 100%;
+                                        max-height: 100%;
+                                        object-fit: cover;
+                                        object-position: center;
+                                      "
+                                  /></span>
+                                </div>
+                                <div class="sc-7826a1e1-0 fDjSQn">
+                                  <span
+                                    style="
+                                      box-sizing: border-box;
+                                      display: block;
+                                      overflow: hidden;
+                                      width: initial;
+                                      height: initial;
+                                      background: none;
+                                      opacity: 1;
+                                      border: 0;
+                                      margin: 0;
+                                      padding: 0;
+                                      position: absolute;
+                                      top: 0;
+                                      left: 0;
+                                      bottom: 0;
+                                      right: 0;
+                                    "
+                                    ><img
+                                      alt=""
+                                      sizes="100vw"
+                                      srcset="
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_640/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop   640w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_750/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop   750w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_828/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop   828w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1080/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 1080w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1200/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 1200w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_1920/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 1920w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_2048/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 2048w,
+                                        https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_3840/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop 3840w
+                                      "
+                                      src="https://digitalassets.tesla.com/image/upload/q_auto/f_auto/w_3840/prod/fulfillment/energy/Order/EnergyConfigurator/sr-selector-image-desktop"
+                                      decoding="async"
+                                      data-nimg="fill"
+                                      class="styles_showImage__XbgsO"
+                                      style="
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        bottom: 0;
+                                        right: 0;
+                                        box-sizing: border-box;
+                                        padding: 0;
+                                        border: none;
+                                        margin: auto;
+                                        display: block;
+                                        width: 0;
+                                        height: 0;
+                                        min-width: 100%;
+                                        max-width: 100%;
+                                        min-height: 100%;
+                                        max-height: 100%;
+                                        object-fit: cover;
+                                      "
+                                  /></span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="styles_productCardContent__tNT90">
+                              <div class="styles_productSummary__uzYKz">
+                                <span class="tds-text--h6"
+                                  >Solar Roof + Powerwall</span
+                                >
+                              </div>
+                              <span
+                                class="tds-text--contrast-low styles_productCardCaption__BShvb"
+                                >New luxury integrated solar roof with
+                                backup&nbsp;protection</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <span class="tds-text--caption styles_disclaimer__TB5bY"
+                          >Prices include potential incentives, discounts, and
+                          Powerwall. Excludes future energy savings.</span
+                        >
+                      </div>
+                    </div>
+                    <button
+                      class="tds-btn styles_nextButton__KRKyz"
+                      disabled=""
+                      id="landing-page-next-btn"
+                      type="button"
+                    >
+                      Next
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="gallery-end"></div>
+          </div>
+        </main>
+        <div class="styles_modalContainer__pluvL">
+          <dialog aria-hidden="true" class="tds-modal">
+            <div class="tds-modal-header">
+              <button
+                aria-label="Close Modal"
+                class="tds-modal-close"
+                type="button"
+              >
+                <svg
+                  class="tds-icon tds-icon-close tds-modal-close-icon"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M18.53 17.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06 0 .75.75 0 0 1 0-1.06L10.94 12 5.47 6.53a.75.75 0 1 1 1.06-1.06L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <section class="tds-modal-content styles_modalContent__rslqq">
+              <span
+                style="display: inline-block; height: 60px; margin-bottom: 10px"
+                ><svg
+                  height="60"
+                  viewBox="0 0 60 60"
+                  width="60"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g fill="#12BB00" fill-rule="nonzero">
+                    <path
+                      d="M30 59.5C13.708 59.5.5 46.292.5 30S13.708.5 30 .5 59.5 13.708 59.5 30 46.292 59.5 30 59.5zm0-3c14.636 0 26.5-11.864 26.5-26.5S44.636 3.5 30 3.5 3.5 15.364 3.5 30 15.364 56.5 30 56.5z"
+                    ></path>
+                    <path
+                      d="M26.476 35.406L40.53 21.352a2 2 0 1 1 2.828 2.829L26.476 41.063l-8.348-8.348a2 2 0 1 1 2.828-2.829l5.52 5.52z"
+                    ></path>
+                  </g></svg
+              ></span>
+              <h3 class="">undefined Referral Applied</h3>
+              <p class="">
+                You will receive NaN Credits for ordering Solar Roof or Solar
+                Panels after system activation
+              </p>
+              <button
+                class="tds-btn styles_orderButton__O_E9u"
+                data-test="referral-order-now-btn"
+              >
+                Order Now
+              </button>
+            </section>
+          </dialog>
+          <div class="tds-modal-backdrop"></div>
+        </div>
+      </main>
+    </div>
+    <script id="__NEXT_DATA__" type="application/json">
+      {
+        "props": {
+          "pageProps": {
+            "currentEnv": "production",
+            "enableChat": true,
+            "featureFlags": {
+              "TECX-11541-energy-ownership-show-support": true,
+              "TECX-12810-solarroof-price-estimate": true,
+              "TECX-16255-energy-ownership-deprecate-TEWS": true,
+              "TECX-17989-energy-ownership-enable-SCA": true,
+              "TECX-18710-energy-ownership-enable-channel-support": true,
+              "TECX-19482-enable-energy-support-carousel": true,
+              "TECX-20529-enable-process-map": true,
+              "TECX-22143-enable-FTC-payments": true,
+              "TECX-22143-enable-multiple-financing-payment-options": true,
+              "TECX-22262-enable-tesla-electric-guest-experience": true,
+              "TECX-5335_update_energy_lead_form_section": true,
+              "TECX-6180-use-new-solarroof-config": true,
+              "energy-configurator-cachebust": "0515TENewProgram",
+              "energy-configurator-default-to-subscription": true,
+              "energy-configurator-enable-eog-v2": true,
+              "energy-configurator-enable-geolocation": true,
+              "energy-configurator-enable-loan-for-sr": true,
+              "energy-configurator-enable-matomo-ab-pilot-test": true,
+              "energy-configurator-enable-partner-with-tesla-learn-more": true,
+              "energy-configurator-enable-passwordless-flow": true,
+              "energy-configurator-enable-powerwall-virtual-consultations": true,
+              "energy-configurator-enable-pw-card": true,
+              "energy-configurator-enable-roof-complexity": true,
+              "energy-configurator-enable-silent-login-flow": true,
+              "energy-configurator-enable-standalone-powerwall": true,
+              "energy-configurator-enable-tds-7": true,
+              "energy-configurator-enable-virtual-consult-banner": true,
+              "energy-configurator-phase-2-powerwall-lead-form": true,
+              "energy-configurator-phase-3-powerwall-lead-form": true,
+              "energy-configurator-powerwall-checkbox": true,
+              "energy-configurator-refundable-supply-chain-copy": true,
+              "energy-configurator-sizeguide-included": true,
+              "energy-configurator-use-get-api": true,
+              "energy-configurators-tecx-17548": true,
+              "energy-support-tcc-grid-case-switch-tecx-14308": true,
+              "manage-energy-site-user-access-tecx-14797": true,
+              "payment-details-case-refactor-tecx-18584": true,
+              "tecx-10040-new-referral-credits": true,
+              "tecx-10041-publish-energy-order-status-change-for-referral": true,
+              "tecx-10609-show-ecosystem-rebate-messaging": true,
+              "tecx-10706-enable-energy-configurator-translations": true,
+              "tecx-10786-authorization-required": true,
+              "tecx-10787-tesla-energy-demon-authorization-required": true,
+              "tecx-10931-enable-refundable-deposit-sr-configurator": true,
+              "tecx-11512-energy-configurator-captive-pilot": true,
+              "tecx-11922-p-wplus-photos-on-config": true,
+              "tecx-12024-mandatory-pw": true,
+              "tecx-12756-enable-mc": true,
+              "tecx-12950-enable-blackbird-assets": true,
+              "tecx-13476-unified-configurator-oi": true,
+              "tecx-13617-sr-referrals-only": true,
+              "tecx-13901-deprecate-configurator-dashboard": true,
+              "tecx-14001-enable-avaya": true,
+              "tecx-14091-use-salesorderservice-eog": true,
+              "tecx-14228-cartographer-api-flag": true,
+              "tecx-14902-use-salesorderservice-taa": true,
+              "tecx-14903-use-salesorderservice-tal": true,
+              "tecx-14997-new-phone-component": true,
+              "tecx-15211-energy-service-enable-chat": true,
+              "tecx-16837-limit-returned-quotes": true,
+              "tecx-17307-unified-configurator-referral-credits": true,
+              "tecx-17887": true,
+              "tecx-19831-use-google-solar": true,
+              "tecx-19976-intl-pw-pricing": true,
+              "tecx-19998": true,
+              "tecx-20116-en-from-key-gen-servcie": true,
+              "tecx-20172": true,
+              "tecx-20214-tesla-electric-payouts": true,
+              "tecx-20280-esos-use-contacts-kube": true,
+              "tecx-20342-vpp-payouts": true,
+              "tecx-20827-portugal": true,
+              "tecx-20853-taiwan": true,
+              "tecx-21987-enable-tesla-electric-enrollment": true,
+              "tecx-21988-enable-tesla-electric-upsell": true,
+              "tecx-2557-dynamo-one-pager": true,
+              "tecx-3338-save-pvpw-customer-design": true,
+              "tecx-3373-megapack-utilities-update": true,
+              "tecx-3374-megapack-energy-updates": true,
+              "tecx-3532-deposit": true,
+              "tecx-3559-max-california-loan-presentation-expiration-date": "2019-01-01T00:00:00.00",
+              "tecx-3743-show-backup-messaging-on-powerwall": true,
+              "tecx-3860-use-static-assets-server-for-energy-homepage": true,
+              "tecx-4596-hide-pvpw-savings": true,
+              "tecx-4616-use-tesla-marketing-cloud": true,
+              "tecx-4819-show-payment-form": true,
+              "tecx-4964-block-initial-dynamo-creation": true,
+              "tecx-5004-show-energy-configurator": true,
+              "tecx-5159-enable-apple-pay": true,
+              "tecx-5306-solar-cancellations": true,
+              "tecx-5376-redirect-to-energy": true,
+              "tecx-5539-home-charging-in-territory": "{\"stateProvince\":[\"VA\", \"CA\", \"CO\", \"IL\", \"AZ\", \"DE\", \"MA\", \"NH\", \"NM\", \"NY\", \"RI\", \"TX\", \"UT\", \"VT\",\"CT\",\"MD\",\"NJ\",\"NV\",\"OR\",\"PA\",\"DC\"]}",
+              "tecx-5882-rent-finance-option": true,
+              "tecx-6131-remove-loan-from-solar-payment-details": true,
+              "tecx-6236-solar-subscription-handler": true,
+              "tecx-6244-rent-payment-details": true,
+              "tecx-6293-show-loan-option-in-energy-configurator-for-non-rent-states": true,
+              "tecx-6340-allow-commercial-configurator": true,
+              "tecx-7046-create-account-in-accountmaster": true,
+              "tecx-7132-use-v2-payment-route": true,
+              "tecx-7251-use-oauth2": true,
+              "tecx-788-sdge-smud-require-tou": true,
+              "tecx-8330-allow-users-to-select-powerwall-quantity": true,
+              "tecx-8359-publish-pw-upfront-agreement-signed-event": true,
+              "tecx-8440-update-privacy-consent-in-warp": true,
+              "tecx-8976-eog-call-new-conductor-workflow": true,
+              "tecx-9354-ignore-storeid-330": true,
+              "tecx-9470-enable-energy-service-appointment-scheduling": true,
+              "tecx-9570-load-international-powerwall-configurator": true,
+              "tecx-9612-solar-roof-configurator-pilot-zips": " ",
+              "tecx-9669-enable-cancellation-button": true,
+              "tecx-9759-energy-configurator-fast-track-installation-pilot": true,
+              "tecx-9778-create-business-account-for-commercial-orders": true,
+              "tecx-canada-pw3-assets": true,
+              "tecx-config-425W-localized": true,
+              "tecx-config-ppa-program": true,
+              "tecx-config-tesla-anywhere": true,
+              "tecx-ftc-pre-payment": true,
+              "tecx-gbprice-with-tax": true,
+              "tecx-malta-partner-and-CI-pages": true,
+              "tecx-new-savings": true,
+              "tecx-pv-tiered-pricing": true,
+              "tecx-pw3-intl-launches": true,
+              "tecx-redirect-commercial-config": true,
+              "tecx-redirect-megapack-config": true,
+              "tecx-tesla-electric-VPP-update": true
+            },
+            "isLoggedIntoTesla": false,
+            "isStandalonePowerwall": false,
+            "localeInfo": {
+              "countryCode": "US",
+              "currencyCode": "USD",
+              "formattedLocale": "en-US",
+              "language": "en",
+              "localeRoute": "en_US"
+            },
+            "name": "EnergyConfigurator",
+            "pageTitle": "Design your Solar + Powerwall system | Tesla",
+            "path": "/energy/design",
+            "releaseId": "main.b1593.f1962d578b",
+            "isMobileDevice": true,
+            "skipGuard": false
+          },
+          "__N_SSP": true
+        },
+        "page": "/energy/design",
+        "query": {},
+        "buildId": "IEBYw4Hm1A-nPwQYNu8TX",
+        "assetPrefix": "/energy-config",
+        "isFallback": false,
+        "isExperimentalCompile": false,
+        "gssp": true,
+        "locale": "en_US",
+        "locales": [
+          "en_US",
+          "ar_AE",
+          "ar_JO",
+          "cs_CZ",
+          "da_DK",
+          "de_AT",
+          "de_CH",
+          "de_DE",
+          "de_LU",
+          "el_GR",
+          "en_AE",
+          "en_AU",
+          "en_CA",
+          "en_EU",
+          "en_GB",
+          "en_HK",
+          "en_IE",
+          "en_IN",
+          "en_JO",
+          "en_MO",
+          "en_MT",
+          "en_NZ",
+          "en_PR",
+          "en_PT",
+          "en_SG",
+          "en_TH",
+          "en_TR",
+          "tr_TR",
+          "en_ZA",
+          "es_ES",
+          "es_MX",
+          "es_PR",
+          "fi_FI",
+          "fr_BE",
+          "fr_CA",
+          "fr_CH",
+          "fr_FR",
+          "fr_LU",
+          "hr_HR",
+          "hu_HU",
+          "is_IS",
+          "it_CH",
+          "it_IT",
+          "ja_JP",
+          "ko_KR",
+          "nl_BE",
+          "nl_NL",
+          "no_NO",
+          "pl_PL",
+          "pt_PT",
+          "ro_RO",
+          "sl_SI",
+          "sv_SE",
+          "th_TH",
+          "zh_CN",
+          "zh_HK",
+          "zh_TW",
+          "en_MY",
+          "en_QA",
+          "ar_QA"
+        ],
+        "defaultLocale": "en_US",
+        "scriptLoader": []
+      }
+    </script>
+    <script
+      id="handle404"
+      src="/energy/assets/handle404.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="https://cdn.optimizely.com/js/27160410180.js"
+      type="text/javascript"
+      data-nscript="afterInteractive"
+    ></script>
+    <script id="google-maps-initMapsApi" data-nscript="afterInteractive">
+      window.initMapsApi = function initMapsApi() {};
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&amp;key=AIzaSyDvm1qc093AzpjhHj4__8ychwLeF4rGg80&amp;language=en&amp;callback=initMapsApi&amp;loading=async"
+      async="true"
+      id="google-places-script"
+      type="text/javascript"
+      data-nscript="afterInteractive"
+    ></script>
+    <script
+      src="https://www.tesla.com/cua/assets/apps/oceana/chat-ui.js"
+      type="text/javascript"
+      data-nscript="afterInteractive"
+    ></script>
+    <next-route-announcer
+      ><p
+        aria-live="assertive"
+        id="__next-route-announcer__"
+        role="alert"
+        style="
+          border: 0px;
+          clip: rect(0px, 0px, 0px, 0px);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0px;
+          position: absolute;
+          top: 0px;
+          width: 1px;
+          white-space: nowrap;
+          overflow-wrap: normal;
+        "
+      ></p></next-route-announcer
+    ><iframe
+      src="https://a27160410180.cdn.optimizely.com/client_storage/a27160410180.html"
+      hidden=""
+      tabindex="-1"
+      title="Optimizely Internal Frame"
+      height="0"
+      width="0"
+      style="display: none"
+    ></iframe>
+    <script
+      src="/energy/assets/gtm.js"
+      type="text/javascript"
+      data-nscript="afterInteractive"
+    ></script>
+    <script type="text/javascript" id="" charset="">
+      function testGoogle() {
+        dataLayer.push({ testGoogleTag: !0 });
+      }
+      testGoogle();
+    </script>
+    <script type="text/javascript" id="" charset="">
+      (function (e, r) {
+        function l() {
+          var a = document.getElementsByTagName("iframe");
+          if (a)
+            for (var c = 0; c < a.length; c++)
+              if (
+                /^https?:\/\/player.vimeo.com/.test(a[c].src) &&
+                !a[c].playerId
+              ) {
+                var b = /video\/([0-9]*)/.exec(a[c].src)[1];
+                ~a[c].src.indexOf("?")
+                  ? (a[c].src += "\x26player_id\x3d" + b)
+                  : (a[c].src += "?player_id\x3d" + b);
+                a[c].playerId = b;
+                g[b] = a[c];
+                console.log("getplayer", b);
+                b =
+                  "//vimeo.com/api/v2/video/" +
+                  b +
+                  ".json?callback\x3daddPlayerData";
+                var d = document.createElement("script"),
+                  e = document.getElementsByTagName("script")[0];
+                d.async = !0;
+                d.type = "text/javascript";
+                d.src = b;
+                e.parentNode.insertBefore(d, e);
+                h(a[c]);
+              }
+          5 >= m ? (m += 1) : window.clearInterval(n);
+        }
+        function p() {
+          window.clearInterval(n);
+          l();
+        }
+        function q(a) {
+          if (!/^https?:\/\/player.vimeo.com/.test(a.origin)) return !1;
+          "*" === k && (k = a.origin);
+          a = JSON.parse(a.data);
+          var c = g[a.player_id] || {},
+            b = c.videoData || {};
+          switch (a.event) {
+            case "ready":
+              if (a.player_id)
+                h(c), c.playerLoaded ? d(b, "Video Load") : (c.sendReady = !0);
+              else for (key in g) h(g[key]);
+              break;
+            case "play":
+              b.progress + 1.5 > b.duration && (b.progress = 0);
+              d(b, "Play");
+              break;
+            case "playProgress":
+              b.seekStart || 0 === b.seekStart
+                ? 2 < b.playProgressCount
+                  ? ((b.progress = b.seekStart),
+                    (b.seekStart = void 0),
+                    d(b, "Seek Start"),
+                    (b.progress = a.data.seconds),
+                    d(b, "Seek End"),
+                    (b.playProgressCount = 0))
+                  : b.playProgressCount++
+                : (b.progress = a.data.seconds);
+              a = b;
+              if (
+                a.progress &&
+                a.duration &&
+                ((b = Math.floor((a.progress / a.duration) * 100)),
+                b > a.nextMilestone)
+              )
+                for (c = 0; c < e.length; c++)
+                  if (e[c] > b) {
+                    d(a, "Milestone - " + e[c - 1] + "%");
+                    if (r)
+                      for (b = c - 2; e[b] >= a.nextMilestone; b--)
+                        d(a, "Milestone - " + e[b] + "%");
+                    a.nextMilestone = e[c];
+                    break;
+                  }
+              break;
+            case "pause":
+              b.progress + 1.5 > b.duration
+                ? ((b.progress = b.duration), d(b, "Finish"))
+                : d(b, "Pause");
+              break;
+            case "seek":
+              (b.seekStart = b.progress),
+                (b.progress = a.data.seconds),
+                (b.playProgressCount = 0);
+          }
+        }
+        function f(a, c, b) {
+          c = { method: c };
+          b && (c.value = b);
+          b = JSON.stringify(c);
+          a.contentWindow.postMessage(b, k);
+        }
+        function h(a) {
+          f(a, "addEventListener", "loadProgress");
+          f(a, "addEventListener", "play");
+          f(a, "addEventListener", "playProgress");
+          f(a, "addEventListener", "pause");
+          f(a, "addEventListener", "seek");
+          f(a, "addEventListener", "finish");
+        }
+        function d(a, c) {
+          dataLayer.push({
+            event: "videoPlayerEvent",
+            videoAction: c,
+            videoTimestamp: a.progress ? a.progress : 0,
+            videoLength: a.duration,
+            videoId: a.id,
+            videoSourceUrl: a.url,
+            videoTitle: a.title,
+            videoHostPlatform: "Vimeo",
+            videoHostUser: a.user_name,
+            videoUploadDate: a.upload_date
+              ? a.upload_date.split(" ")[0]
+              : void 0,
+            videoPlayerWidth: a.width,
+            videoPlayerHeight: a.height,
+            videoPlayerColor: a.color,
+            videoAutoPlayEnabled: a.autoplay,
+          });
+        }
+        var g = {},
+          k = "*",
+          m = 0;
+        window.addPlayerData = function (a) {
+          console.log("adddata", a);
+          var c = g[a[0].id],
+            b = /color=([a-zA-Z0-9]*)/.exec(c.src);
+          c.videoData = a[0];
+          c.videoData.color = b ? b[1] : "default";
+          c.videoData.autoplay = String(/autoplay=(true|[1-9])/.test(c.src));
+          c.videoData.nextMilestone = e[0];
+          c.videoData.progress = 0;
+          d(c.videoData, "Player Load");
+          c.sendReady ? d(c.videoData, "Video Load") : (c.playerLoaded = !0);
+        };
+        var n = window.setInterval(l, 1e3);
+        window.addEventListener
+          ? (window.addEventListener("message", q, !1),
+            window.addEventListener("DOMContentLoaded", p))
+          : (window.attachEvent("onmessage", q, !1),
+            window.attachEvent("onload", p));
+        e.push(100);
+      })([10, 20, 30, 40, 50, 60, 70, 80, 90], !0);
+    </script>
+    <script type="text/javascript" id="" charset="">
+      (function () {
+        document.addEventListener(
+          "click",
+          google_tag_manager["rm"]["1779169"](40),
+          !0
+        );
+      })();
+    </script>
+    <script type="text/javascript" id="gtm-global-click-form" charset="">
+      (function () {
+        function f() {
+          window.dataLayer.push({
+            event: "form-interaction",
+            interaction: c,
+            formType: d,
+            engagementType: g,
+          });
+        }
+        function h() {
+          c = "view-open";
+          b &&
+            (f(),
+            b.addEventListener("submit", function () {
+              c = "confirm-thank-you";
+              f();
+            }));
+          console.log("form loaded");
+        }
+        function k() {
+          var a = !1;
+          b = document.querySelector(".tcl-form form");
+          document.body.contains(b) &&
+            !d &&
+            ((g = "User Requested"),
+            (e = window.location.pathname.split("/")),
+            (d = e[e.length - 1]),
+            (a = !0));
+          return a;
+        }
+        function l(a) {
+          k() || h();
+        }
+        function m() {
+          var a = new MutationObserver(l),
+            n = document.body;
+          a.observe(n, { childList: !0 });
+          return a;
+        }
+        var d = !1,
+          g = !1,
+          e = !1,
+          b = !1,
+          c = !1;
+        k() ? h() : m();
+        document.addEventListener(
+          "click",
+          google_tag_manager["rm"]["1779169"](42),
+          !1
+        );
+      })();
+    </script>
+    <script type="text/javascript" id="" charset="">
+      function getQueryParam(b, d) {
+        b = b.split(/[?#]/)[1];
+        if (!b) return null;
+        b = b.split("\x26");
+        for (var a = 0; a < b.length; a++) {
+          var c = b[a].split("\x3d");
+          if (c[0] === d) return decodeURIComponent(c[1]);
+        }
+        return null;
+      }
+      function setCookie(b, d, a) {
+        var c = "";
+        a &&
+          ((c = new Date()),
+          c.setTime(c.getTime() + 864e5 * a),
+          (c = "; expires\x3d" + c.toUTCString()));
+        document.cookie = b + "\x3d" + (d || "") + c + "; path\x3d/";
+      }
+      function cookieExist(b) {
+        if (-1 < document.cookie.indexOf(b))
+          return console.log("_trafficid_hist exists!"), !0;
+      }
+      function getCookie(b) {
+        b += "\x3d";
+        var d = decodeURIComponent(document.cookie);
+        d = d.split("; ");
+        for (var a = 0; a < d.length; a++) {
+          for (var c = d[a]; " " == c.charAt(0); ) c = c.substring(1);
+          if (0 == c.indexOf(b))
+            return (
+              console.log(b.length, c.length), c.substring(b.length, c.length)
+            );
+        }
+        return "";
+      }
+      function getCookieSize(b) {
+        b += "\x3d";
+        var d = decodeURIComponent(document.cookie);
+        d = d.split("; ");
+        for (var a = 0; a < d.length; a++) {
+          for (var c = d[a]; " " == c.charAt(0); ) c = c.substring(1);
+          if (0 == c.indexOf(b)) return c.length;
+        }
+        return "";
+      }
+      function storeTrafficCookie() {
+        var b =
+            "utm_source utm_medium utm_campaign gclid twclid utm_term utm_content".split(
+              " "
+            ),
+          d = new Date().getTime(),
+          a = {};
+        a.timestamp = d;
+        for (d = 0; d < b.length; d++) {
+          var c = getQueryParam(window.location.href, b[d]);
+          c && (a[b[d]] = encodeURIComponent(c));
+        }
+        console.log(a);
+        1 == cookieExist("_trafficid_hist")
+          ? 1 < Object.keys(a).length &&
+            null != a.utm_source &&
+            null != a.utm_medium &&
+            null != a.utm_campaign &&
+            ((b = getCookie("_trafficid_hist")),
+            3e3 < getCookieSize("_trafficid_hist") &&
+              ((b = JSON.parse(b)), delete b[0], (b = JSON.stringify(b))),
+            (b = b.replace("[", "").replace("]", "")),
+            (b = b.concat(", ", JSON.stringify(a))),
+            (b = b.replace('"gclid":', '"clickid":')),
+            (b = b.replace('"twclid":', '"clickid":')),
+            (b = "[" + b + "]"),
+            console.log("Updating cookie:_trafficid_hist"),
+            setCookie("_trafficid_hist", b, 90))
+          : 1 < Object.keys(a).length &&
+            null != a.utm_source &&
+            null != a.utm_medium &&
+            null != a.utm_campaign &&
+            (1 < Object.keys(a).length &&
+            null != a.gclid &&
+            null != a.utm_source &&
+            null != a.utm_medium &&
+            null != a.utm_campaign
+              ? (console.log("Setting cookie: _gclid"),
+                setCookie("_gclid", JSON.stringify(a), 90))
+              : 1 < Object.keys(a).length &&
+                null != a.twclid &&
+                null != a.utm_source &&
+                null != a.utm_medium &&
+                null != a.utm_campaign
+              ? (console.log("Setting cookie: _twclidx"),
+                setCookie("_twclidx", JSON.stringify(a), 90))
+              : 1 < Object.keys(a).length &&
+                null != a.utm_source &&
+                null != a.utm_medium &&
+                null != a.utm_campaign &&
+                (console.log("Setting cookie: _trafficid"),
+                setCookie("_trafficid", JSON.stringify(a), 90)),
+            console.log("Setting cookie:_trafficid_hist"),
+            (a = JSON.stringify(a)),
+            (a = a.replace('"gclid":', '"clickid":')),
+            (a = a.replace('"twclid":', '"clickid":')),
+            (a = "[" + a + "]"),
+            setCookie("_trafficid_hist", a, 90));
+        1 < Object.keys(a).length &&
+        null != a.gclid &&
+        null != a.utm_source &&
+        null != a.utm_medium &&
+        null != a.utm_campaign
+          ? (console.log("Setting cookie: _gclid"),
+            setCookie("_gclid", JSON.stringify(a), 90))
+          : 1 < Object.keys(a).length &&
+            null != a.twclid &&
+            null != a.utm_source &&
+            null != a.utm_medium &&
+            null != a.utm_campaign
+          ? (console.log("Setting cookie: _twclidx"),
+            setCookie("_twclidx", JSON.stringify(a), 90))
+          : 1 < Object.keys(a).length &&
+            null != a.utm_source &&
+            null != a.utm_medium &&
+            null != a.utm_campaign &&
+            (console.log("Setting cookie: _trafficid"),
+            setCookie("_trafficid", JSON.stringify(a), 90));
+      }
+      storeTrafficCookie();
+    </script>
+    <script
+      id=""
+      text=""
+      charset=""
+      type="text/javascript"
+      src="https://js.adsrvr.org/up_loader.1.1.0.js"
+    ></script>
+    <iframe
+      allow="join-ad-interest-group"
+      data-tagging-id="AW-11140901108/jj6eCN_Ey74YEPTRssAp"
+      data-load-time="1719083912463"
+      height="0"
+      width="0"
+      src="https://td.doubleclick.net/td/rul/11140901108?random=1719083912449&amp;cv=11&amp;fst=1719083912449&amp;fmt=3&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be46j0v9118038826z871779169za201zb71779169&amp;gcs=G111&amp;gcd=13n3n3n3n5&amp;dma=0&amp;tag_exp=0&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fwww.tesla.com%2Fenergy%2Fdesign&amp;ref=https%3A%2F%2Fwww.tesla.com%2F&amp;label=jj6eCN_Ey74YEPTRssAp&amp;hn=www.googleadservices.com&amp;frm=0&amp;tiba=Design%20your%20Solar%20%2B%20Powerwall%20system%20%7C%20Tesla&amp;value=0&amp;bttype=purchase&amp;npa=0&amp;auid=2128192499.1719081700&amp;uaa=x86&amp;uab=64&amp;uafvl=Not%252FA)Brand%3B8.0.0.0%7CChromium%3B126.0.6478.61%7CGoogle%2520Chrome%3B126.0.6478.61&amp;uamb=0&amp;uam=&amp;uap=Windows&amp;uapv=10.0.0&amp;uaw=0&amp;fledge=1&amp;capi=1&amp;data=ads_data_redaction%3Dfalse&amp;ct_cookie_present=0"
+      style="display: none; visibility: hidden"
+    ></iframe>
+    <div
+      class="pac-container hdpi"
+      style="
+        display: none;
+        width: 480px;
+        position: absolute;
+        left: 102px;
+        top: 226px;
+      "
+    ></div>
+    <script type="text/javascript" id="" charset="">
+      ttd_dom_ready(function () {
+        if ("function" === typeof TTDUniversalPixelApi) {
+          var a = new TTDUniversalPixelApi();
+          a.init("lrzzems", ["tvn6k1q"], "https://insight.adsrvr.org/track/up");
+        }
+      });
+    </script>
+    <img
+      src="https://t.co/1/i/adsct?bci=4&amp;eci=3&amp;event=%7B%7D&amp;event_id=54c1479b-e0d6-4a08-a303-8591de467834&amp;integration=gtm&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=8652bfb0-e757-4f4e-b350-980967fb8891&amp;tw_document_href=https%3A%2F%2Fwww.tesla.com%2Fenergy%2Fdesign&amp;tw_iframe_status=0&amp;txn_id=ogqcs&amp;type=javascript&amp;version=2.3.30"
+      height="1"
+      width="1"
+      style="display: none"
+    /><img
+      src="https://analytics.twitter.com/1/i/adsct?bci=4&amp;eci=3&amp;event=%7B%7D&amp;event_id=54c1479b-e0d6-4a08-a303-8591de467834&amp;integration=gtm&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=8652bfb0-e757-4f4e-b350-980967fb8891&amp;tw_document_href=https%3A%2F%2Fwww.tesla.com%2Fenergy%2Fdesign&amp;tw_iframe_status=0&amp;txn_id=ogqcs&amp;type=javascript&amp;version=2.3.30"
+      height="1"
+      width="1"
+      style="display: none"
+    /><iframe
+      id="universal_pixel_tvn6k1q"
+      height="0"
+      width="0"
+      style="display: none"
+      src="https://insight.adsrvr.org/track/up?adv=lrzzems&amp;ref=https%3A%2F%2Fwww.tesla.com%2Fenergy%2Fdesign&amp;upid=tvn6k1q&amp;upv=1.1.0&amp;paapi=1"
+      title="TTD Universal Pixel"
+    ></iframe>
+    <div class="tw-chat--avaya-chat-container tw-chat--root">
+      <div class="tw-chat--avaya-chat">
+        <button
+          type="button"
+          data-tds-open-modal="avaya-chat-modal"
+          aria-label="Chat button"
+          class="tw-chat--avaya-chat__button tw-chat--avaya-chat__permanent_cta_style tw-chat--avaya-chat__animated_button"
+          id="tw-chat--avaya-chat__animated_button"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="tw-chat--tds-icon tw-chat--avaya-chat__bubble_icon"
+          >
+            <path
+              d="M19.5 4h-15A2.5 2.5 0 0 0 2 6.5v9A2.5 2.5 0 0 0 4.5 18H7v2.07a.928.928 0 0 0 1.507.725l3.22-2.576A1 1 0 0 1 12.35 18h7.15a2.5 2.5 0 0 0 2.5-2.5v-9A2.5 2.5 0 0 0 19.5 4zm1 11.5a1 1 0 0 1-1 1h-7.15a2.5 2.5 0 0 0-1.56.548L8.5 18.879V17a.5.5 0 0 0-.5-.5H4.5a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h15c.551 0 1 .449 1 1v9zM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+            ></path>
+          </svg>
+          <div
+            id="avaya-chat-button-badge"
+            class="tw-chat--avaya-chat__bubble_badge"
+          ></div>
+        </button>
+        <dialog
+          class="tw-chat--tds-modal tw-chat--tds-scrim--white tw-chat--avaya-chat__modal tw-chat--avaya-chat__modal-logon"
+          id="avaya-chat-modal"
+        >
+          <header
+            class="tw-chat--tds-modal-header tw-chat--avaya-chat__modal-header"
+          >
+            <div style="width: 30px">
+              <button
+                class="tw-chat--avaya-chat__minimize-button"
+                aria-label="Minimize modal"
+                id="chat-form__minimize-button"
+                style="display: none"
+              >
+                <svg
+                  class="tw-chat--tds-icon"
+                  fill="none"
+                  viewBox="0 0 30 30"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m22.34119,15.21793c0,0.41406 -0.4703,0.75 -1.05,0.75l-11.9,0c-0.57969,0 -1.05,-0.33594 -1.05,-0.75c0,-0.41406 0.47031,-0.75 1.05,-0.75l11.9,0c0.5797,0 1.05,0.33594 1.05,0.75z"
+                    fill="#171A20"
+                  ></path>
+                </svg></button
+              ><button
+                class="tw-chat--avaya-chat__back-button"
+                id="avaya-chat__back-button"
+                aria-label="Back button"
+                style="display: none"
+              >
+                <svg
+                  class="tw-chat--tds-icon tw-chat--tds-chevron--right"
+                  viewBox="0 0 30 30"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke="var(--tds-icon--fill, #171a20)"
+                    stroke-width="2"
+                    d="M10.5 17.5l4.5-4 4.5 4"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    transform="rotate(270 15 15)"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <div class="tw-chat--avaya-header-container">
+              <span class="tw-chat--avaya-header-text">Chat</span>
+            </div>
+            <button
+              class="tw-chat--end-chat"
+              aria-label="End Chat"
+              id="chat-form__end-chat-button"
+            >
+              <svg
+                class="tw-chat--tds-icon"
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.53 17.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.748.748 0 0 1-1.06 0 .75.75 0 0 1 0-1.06L10.94 12 5.47 6.53a.75.75 0 1 1 1.06-1.06L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </button>
+          </header>
+          <section
+            class="tw-chat--tds-modal-content tw-chat--avaya-chat__modal-content"
+          >
+            <div id="chat-page" class="tw-chat--full-height-screen">
+              <div class="tw-chat--avaya-chat__topic-header-container">
+                <p class="tw-chat--avaya-chat__topic-sub-heading">
+                  There are no agents currently available. Please enter your
+                  contact information and we will get back to you.
+                </p>
+              </div>
+              <form
+                novalidate="novalidate"
+                class="tw-chat--tds-form-fieldset tw-chat--avaya-chat__modal-form"
+              >
+                <div
+                  class="tw-chat--tds-form-item tw-chat--avaya-chat__form-item"
+                >
+                  <div class="tw-chat--tds-form-label">
+                    <label for="firstName" class="tw-chat--tds-form-label-text"
+                      ><span
+                        class="tw-chat--tds-form-label-text tw-chat--tds-text--600"
+                        >First name</span
+                      ></label
+                    >
+                  </div>
+                  <div
+                    class="tw-chat--tds-form-input tw-chat--tds-form-input--default"
+                  >
+                    <input
+                      class="tw-chat--tds-form-input-text"
+                      id="firstName"
+                      name="firstName"
+                      type="text"
+                      required=""
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="tw-chat--tds-form-feedback-wrap">
+                    <div
+                      class="tw-chat--tds-form-feedback tw-chat--avaya-chat__form-item-feedback"
+                    >
+                      <div class="tw-chat--tds-form-feedback-text"></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="tw-chat--tds-form-item tw-chat--avaya-chat__form-item"
+                >
+                  <div class="tw-chat--tds-form-label">
+                    <label for="lastName" class="tw-chat--tds-form-label-text"
+                      ><span
+                        class="tw-chat--tds-form-label-text tw-chat--tds-text--600"
+                        >Last name</span
+                      ></label
+                    >
+                  </div>
+                  <div
+                    class="tw-chat--tds-form-input tw-chat--tds-form-input--default"
+                  >
+                    <input
+                      class="tw-chat--tds-form-input-text"
+                      id="lastName"
+                      name="lastName"
+                      type="text"
+                      required=""
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="tw-chat--tds-form-feedback-wrap">
+                    <div
+                      class="tw-chat--tds-form-feedback tw-chat--avaya-chat__form-item-feedback"
+                    >
+                      <div class="tw-chat--tds-form-feedback-text"></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="tw-chat--tds-form-item tw-chat--avaya-chat__form-item"
+                >
+                  <div class="tw-chat--tds-form-label">
+                    <label for="email" class="tw-chat--tds-form-label-text"
+                      ><span
+                        class="tw-chat--tds-form-label-text tw-chat--tds-text--600"
+                        >Email address</span
+                      ></label
+                    >
+                  </div>
+                  <div
+                    class="tw-chat--tds-form-input tw-chat--tds-form-input--default"
+                  >
+                    <input
+                      class="tw-chat--tds-form-input-text"
+                      id="email"
+                      name="email"
+                      type="email"
+                      required=""
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="tw-chat--tds-form-feedback-wrap">
+                    <div
+                      class="tw-chat--tds-form-feedback tw-chat--avaya-chat__form-item-feedback"
+                    >
+                      <div class="tw-chat--tds-form-feedback-text"></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="tw-chat--tds-form-item tw-chat--avaya-chat__form-item"
+                >
+                  <div class="tw-chat--tds-form-label">
+                    <label for="phone" class="tw-chat--tds-form-label-text"
+                      ><span
+                        class="tw-chat--tds-form-label-text tw-chat--tds-text--600"
+                        >Phone</span
+                      ></label
+                    >
+                  </div>
+                  <div
+                    class="tw-chat--tds-form-input tw-chat--tds-form-input--default"
+                  >
+                    <input
+                      class="tw-chat--tds-form-input-text"
+                      id="phone"
+                      name="phone"
+                      type="text"
+                      required=""
+                      value=""
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="tw-chat--tds-form-feedback-wrap">
+                    <div
+                      class="tw-chat--tds-form-feedback tw-chat--avaya-chat__form-item-feedback"
+                    >
+                      <div class="tw-chat--tds-form-feedback-text"></div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="tw-chat--tds-form-item tw-chat--avaya-chat__form-item"
+                >
+                  <div class="tw-chat--tds-form-label">
+                    <label for="zip" class="tw-chat--tds-form-label-text"
+                      ><span
+                        class="tw-chat--tds-form-label-text tw-chat--tds-text--600"
+                        >Zip code</span
+                      ></label
+                    >
+                  </div>
+                  <div
+                    class="tw-chat--tds-form-input tw-chat--tds-form-input--default"
+                  >
+                    <input
+                      class="tw-chat--tds-form-input-text"
+                      id="zip"
+                      name="zip"
+                      type="text"
+                      required=""
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="tw-chat--tds-form-feedback-wrap">
+                    <div
+                      class="tw-chat--tds-form-feedback tw-chat--avaya-chat__form-item-feedback"
+                    >
+                      <div class="tw-chat--tds-form-feedback-text"></div>
+                    </div>
+                  </div>
+                </div>
+                <fieldset
+                  class="tw-chat--tds-form-item"
+                  name="productInterested"
+                  required=""
+                >
+                  <legend class="tw-chat--tds-form-label">
+                    Product interest
+                  </legend>
+                  <div class="tw-chat--tds-form-input-group">
+                    <div class="tw-chat--tds-form-input">
+                      <input
+                        type="checkbox"
+                        id="ModelS"
+                        name="Model S"
+                        class="tw-chat--tds-form-input-choice"
+                      />
+                      <div class="tds-form-input-choice-label">
+                        <div class="tw-chat--tds-form-label">
+                          <label
+                            class="tw-chat--tds-form-label-text"
+                            for="ModelS"
+                            >Model S</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tw-chat--tds-form-input">
+                      <input
+                        type="checkbox"
+                        id="Model3"
+                        name="Model 3"
+                        class="tw-chat--tds-form-input-choice"
+                      />
+                      <div class="tds-form-input-choice-label">
+                        <div class="tw-chat--tds-form-label">
+                          <label
+                            class="tw-chat--tds-form-label-text"
+                            for="Model3"
+                            >Model 3</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tw-chat--tds-form-input">
+                      <input
+                        type="checkbox"
+                        id="ModelX"
+                        name="Model X"
+                        class="tw-chat--tds-form-input-choice"
+                      />
+                      <div class="tds-form-input-choice-label">
+                        <div class="tw-chat--tds-form-label">
+                          <label
+                            class="tw-chat--tds-form-label-text"
+                            for="ModelX"
+                            >Model X</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tw-chat--tds-form-input">
+                      <input
+                        type="checkbox"
+                        id="ModelY"
+                        name="Model Y"
+                        class="tw-chat--tds-form-input-choice"
+                      />
+                      <div class="tds-form-input-choice-label">
+                        <div class="tw-chat--tds-form-label">
+                          <label
+                            class="tw-chat--tds-form-label-text"
+                            for="ModelY"
+                            >Model Y</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tw-chat--tds-form-input">
+                      <input
+                        type="checkbox"
+                        id="Powerwall"
+                        name="Powerwall"
+                        class="tw-chat--tds-form-input-choice"
+                      />
+                      <div class="tds-form-input-choice-label">
+                        <div class="tw-chat--tds-form-label">
+                          <label
+                            class="tw-chat--tds-form-label-text"
+                            for="Powerwall"
+                            >Powerwall</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tw-chat--tds-form-input">
+                      <input
+                        type="checkbox"
+                        id="SolarPanels"
+                        name="Solar Panels"
+                        class="tw-chat--tds-form-input-choice"
+                      />
+                      <div class="tds-form-input-choice-label">
+                        <div class="tw-chat--tds-form-label">
+                          <label
+                            class="tw-chat--tds-form-label-text"
+                            for="SolarPanels"
+                            >Solar Panels</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tw-chat--tds-form-input">
+                      <input
+                        type="checkbox"
+                        id="SolarRoof"
+                        name="Solar Roof"
+                        class="tw-chat--tds-form-input-choice"
+                      />
+                      <div class="tds-form-input-choice-label">
+                        <div class="tw-chat--tds-form-label">
+                          <label
+                            class="tw-chat--tds-form-label-text"
+                            for="SolarRoof"
+                            >Solar Roof</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tw-chat--tds-form-feedback-wrap">
+                    <div class="tw-chat--tds-form-feedback"></div>
+                  </div>
+                </fieldset>
+                <button
+                  class="tw-chat--tds-btn tw-chat--tds-btn--blue tw-chat--avaya-chat__form-button"
+                  type="submit"
+                  disabled=""
+                >
+                  Request a Callback
+                </button>
+              </form>
+            </div>
+            <div
+              class="tw-chat--avaya-chat__frame tw-chat--full-height-screen"
+            ></div>
+            <footer class="tw-chat--avaya-chat__footer">
+              <form class="tw-chat--avaya-chat__footer-form">
+                <div
+                  class="tw-chat--tds-form-item tw-chat--tds-form-item--text tw-chat--avaya-chat__form-item"
+                >
+                  <div
+                    class="tw-chat--tds-form-input tw-chat--tds-form-input--default tw-chat--tds-form-input-textarea-extendable-wrapper"
+                    id="expandable-textarea-wrapper"
+                    aria-label="Message text area"
+                  >
+                    <textarea
+                      class="tw-chat--tds-form-input-textarea-extendable tw-chat--tds-form-input-text"
+                      id="expandable-textarea"
+                      placeholder="Type a new message"
+                      maxlength="500"
+                    ></textarea
+                    ><button
+                      class="tw-chat--avaya-chat__footer-button tw-chat--tds-text_color--30 tw-chat--tds-text--30"
+                      type="button"
+                      aria-label="Send button"
+                    >
+                      <svg
+                        width="19"
+                        height="19"
+                        viewBox="0 0 19 19"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        id="send-icon-outline"
+                      >
+                        <path
+                          d="M18.78 10.53a.747.747 0 0 1-1.06 0l-4.974-4.97.004 14.69a.75.75 0 0 1-1.5 0l-.004-14.69-4.966 4.96a.75.75 0 1 1-1.06-1.06l6.246-6.241a.75.75 0 0 1 1.06 0l6.254 6.25a.75.75 0 0 1 0 1.06z"
+                          fill="#F4F4F4"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </footer>
+            <div
+              id="avaya-end-chat-prompt-container-overlay"
+              style="
+                display: none;
+                position: fixed;
+                padding: 20px;
+                bottom: 0px;
+                left: 0px;
+                width: 100%;
+                background-color: var(--tds-color--white);
+                align-items: center;
+                justify-content: center;
+                z-index: 3;
+              "
+            >
+              <div
+                class="tw-chat--chat-end-message-container"
+                id="chat-end-question-message"
+              >
+                <div class="tw-chat--chat-end-message-content">
+                  <p class="tw-chat--chat-end-message-main">End Chat?</p>
+                  <div class="tw-chat--chat-end-message-buttons">
+                    <button
+                      class="tw-chat--tds-btn tw-chat--tds-btn--tertiary tw-chat--close-screen-btn"
+                    >
+                      Yes</button
+                    ><button
+                      class="tw-chat--tds-btn tw-chat--tds-btn--tertiary tw-chat--close-screen-btn"
+                    >
+                      No
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="tw-chat--tds-loader tw-chat--avaya-chat-loader"
+              aria-busy="true"
+              aria-hidden="false"
+              aria-label="Loading"
+              aria-live="polite"
+            >
+              <svg
+                class="tw-chat--tds-icon tw-chat--tds-icon-loader"
+                viewBox="0 0 51 51"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <clipPath
+                  transform="translate(-44.5 -44.5)"
+                  id="tw-chat--tds-loader-clip-path"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="none"
+                    d="M70 45.5a2.5 2.5 0 010 5 19.5 19.5 0 1014.23 6.17 2.5 2.5 0 113.65-3.42A24.5 24.5 0 1170 45.5z"
+                  ></path>
+                </clipPath>
+                <image
+                  width="51"
+                  height="51"
+                  clip-path="url(#tw-chat--tds-loader-clip-path)"
+                  href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAACXBIWXMAAAsSAAALEgHS3X78AAALDklEQVRoQ41azW4ktxH+qtijGW2AtSXAjxQ/kI+5+OgVDC8M3/YV7EfIwcgTBIGB+BDAB8dBrMT7L40002R9OZDFrqZG6xAgmr/d9fGrKhY5I5999tmPJEVExJ8AYlYvtz4N4zS0+bje5jnW29zfSL4UkZcAXgJ4RfJVe75W1ddm9kZE3pB8a2ZvN5vNu6urq/cn5OtZSaLiIP0JwDNCmQDg47zPzBDmIPQ9lgyAiUgBkAHMAI4ichSRg4gczOyQUro3s3sRuQNw9+TJk7vwjlNgoKjynQIUhWSrdiCsaSX8KSAn2gxAIZkBzCRnkkeSBwAHVb0HcAfgTkTuHMznn3+eAyvAAASATFhWHCISn6xzV6njbH1EVT8H7BPYxsQ2oA52RjLJWUSOJI8ADmZ2UNV7kvc557vNZrPf7/f7b7755u6Eeq1eiwhmAAIsjKFVXOi+2s5c6BtB9fkhGYAiIjOaigE4iMg9yTsAd6q6F5F9znn/ww8/7E8AOZknX2pPkZlYj+rS+h4FcOp9IXVbIel2cg/gHsAdyX0pZQ9gD+D2+++/j+o1Zm3vFACiqOpgvspYbMOwCErUFe11abblSUQeZAyJpJAsWFTswGor92iMNCC3Z2dnN8+fP3f16h4VayCrvqkBEQlq1j6M1uceL9oRY9nrWIB2+TEkqTYzi0hXLzRG0NhIKd389NNPN7/DyNiGyYUKAn8IkAtHAMa6t3SmGlsP3DfWacUKyTsR2QO4VdWblNL7169f33z77bdFRD7ESM+Xl5dCUiYXAADi8xFA1j7QBZVgN2YGVXWmVu9oHwaa0bOqVwciIjcA3ovI+xcvXuwDkCj8o0BIVgdAEqraFrRGAmHyKUDAskeNzFCaw/DykDKAA4B7EdmTvDWzm5TS+/1+//76+vqdyEn1+iCQDiYAGdXN7Um5BuQAjKQENvxdp0BARArbnuKMoLLxDsDb4/H45rvvvrMTAFZPB2FmHQhQ4yZjSGjhBqpN+GrHukn1dIYFUO8Lc055tYwautyR3JO8AfCe5Ntpmt68ePFiH4T+IJATWbuquIAMaQQWnwGQu2zzd7X3ddtp/WANYQ4A9iJyIyLvROTNZrN5/cUXX7yWaicjkF6/uLhQM1tltgCXTc06rVw8lqjqaDs+DiS1gUFr8z6TSkt3EpEZEZlJ3pG8JfkupfRGRF6VUl628aeAyOXlpfIEG01mlxHdtTZQq9UNKbKwyrGPXGzphIoBVcX2qHbyppTy6v7+/rcvv/zyFo8wcnl5eZKNIQtJnbCsqqACOeVJYna0KtVrddcr0r1QdxJA30QFwD2rnbwh+ZLkf77++uvrQb2Sg2pqJQ3Aion2RCx7oMkgLOOkMZsZmtB9XwqAQFJk7SAYxtyJyDszeyki1ymlfzcgDiBhzYaYWbeJQS6M5QlVPaR9eAVomCxm1SRQvWBfeS7uXKS6XxERt6uobrckX6nqtar+6+rq6mYAkgY2HmOkAzg/P+8MuTp0j8TqZqNdFNTDVGllI1lOZRHJw3i3QV/FtyJynXP+57Nnz352AKgakj7++ONkZlpKSWaW+NA2lKTudjvd7XZ6fn7urCmdGUcZdLvX27Oz08DHsm+UCQDCO7QB9IUCgN9I/rzdbv8hIh3I5eVlKqWkUkp0tStWIgOt3RfIv4eVmsWOCI5VjSQCC3N6wMm2eaqqz0vSPBuAA8lfzOzHZ8+evQWwAbC5uLhIOeeRBSGpI4BR+FAHBjUb1cusGklXrWYPPWM5/maScyvPrXxEPYDl9o23AP7+1Vdf/Q0VyNlHH320yTlvSimbUsrGzKbtdjvtdrtpt9slM+t5AOsMrjbVrmaODuibHUi69wIaQyRFVbsn4cKWNoCpPa29I7VF+CWl9GcR2V5cXOxyzpvGSNrtdt1jmdkDQw/PkY1V3wrMiYEP2pu6AQCad+tqaGZ+R5ZIZhEpTeWeAPjL1dXV9dOnT/9wPB7Pttvt5CtcSuk2OXzvQyA8LWDoktV0MtqNKQyXWPePRcZUVdsxGM+fP//T5eXlJ6WUzTRNmnNWnhD6kfqjKYL0Y3PsXI3F76Rm3Gjq6GWKiOWcjeRxv9//9dNPP/3jr7/++tt+vz/mnC3nbAAwz7PvV6t3Ho/HB996JPW5E5pumy2mI/IgpjopNFBPl7JEyO7dipkVksdSyu08z/99+vTpJwBwe3t7ezgcjsfjsZRSSs6ZpRQDwJyz2ytTSqfk4DzPQ9MAZuzFeqXIaviQGjyiCd2zmY0eMZvZbGYH1pPkPE3T5vz8/A8AME3TtNvt5nme8+FwMDOzUoptt1vmnNnA9AWb57kD22w2BABnLgKegmAPOgGXu59HOLT5HrJy5Q3IbGYHMzuiRgQppXR2dnZWAGCeZxWRpKq5lNIBNRAOhjlnTtO0AgSA5+fnGNpWzLjAvYxl9UFydYIMKe5PhWQ2s8x6PJ5bnaoqqjpN07Rp46GqklKSeZ6LmZmqWkrJcs5MKbGUsnpG4ZsMD5ix2OkgvOKCA92wadXA4unUc7wQ983URISqKiKiKaVUSpnavQFISkpJVbWoqjkoB3AKmMsY7VdE2I8ArHbRO/CQHR/Xz/oOwtWLy21lYXMCaKpYp9VwP6WUSFoQDEDdt8xMUkpSSqGrXdSIaZqYc4bLHGStx+aoiwMAWDXumK21dfUSETOzHu6gRc5tDK15SlX180lKKa1Oo6yxV5GWmsp1UNvttrOiqv2OASFq8UBzpYOeBmD95gVL/EYAxZmx6o4jyMgwmpAi9eoqoaoqp2lCzhnTNMHa9VFjyTVApKp393SRLQBSSqHfaK6ARKYGAGyCd0BBxaITWN3mtPd6HKeq6lGCTtOkpZQeeagqrN6Mehxo0WaijF53Qaf2YfgqdQQLCLamLuCoZmx24wA9ByBQVeScO6CWiXqmwWazQc7Zr3gdEIGVE/LbVMhy1mIphdM09Ytzl7+7YAfh2LColTm4UXgH6vO5Do2QUoItUbGqqrWysF6QcGCGqupGbmjHdZdxmiZGUN1mHgPh7Q6oNcXV726apLl7dXV3ZlBf2INRrfdyrmIEqmGPzFhzvw7OZSml0B2Bg+rMNIRRcHqSdvRlULUApANyVoaPwlUjAiml9ItGktrmamTG2Wh2qQ2cpZQAVFUrpaC9b3EAQTVWdW0X4Q5EVZ0dilQP08rmdal6jJi4OAAxsxWgnLNIsyEfU0rRCKipJDCoWpB1iZrJhQ0fFNpGIF3NGgjfAB1g38z8Q2PiIwx5f0rJmn0pqi2qVodgZoaUEkopq2cPNNk82gCqsxCBxDFo9uXCW9tkIzutrX+4gYi2I+7pYm4ALACCav/9hS2Ok247QXAXelUfy57aKhGA78wkl3DI2eHg0errBA6ilCIMoDybmTo7Td06IF8UqbEepdnOyjX70wXzNqCHJe5BzBlwFrzcwKGVH6QmiJDVs0UQzo7WTdW9n1o1TDQjWgHS5jBWavZ7QFCdQVe7OHZ8RkaizXABAFezmAd2XA0hUt1hE1raewFgBWgaQQwC9dX28shC6MeYot14ioIDQM55BcoB+VirfzQSd8eufg6ifQcA1mqGAchoN8Bi4N7mLJwCOQIZkwvv77DwGyW5vqNzVfJ5J9Xs/wUylGN07bR42T/4OIqQGFip1bXNODMuNKvtdHArNQuCnHQEQ1s3KLcFZ6QJH+c+msjVzxMEFkcgIrS6v5ADM65W7uFGQH7h/ahHcxdrIdZq9c4I8PB6aqx7agAAVEeg9W6gM+F5bI+2lFJa2ZfX/wfatzqKbvkfOAAAAABJRU5ErkJggg=="
+                ></image></svg
+              ><svg
+                class="tw-chat--tds-icon tw-chat--tds-icon-logo"
+                viewBox="0 0 160 160"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  transform="translate(30 30)"
+                  fill="var(--tds-icon--fill, #171a20)"
+                >
+                  <path
+                    d="M50 99.8l14-78.7c13.3 0 17.5 1.5 18.1 7.4 0 0 8.9-3.3 13.5-10.1C78 10.3 60.3 9.9 60.3 9.9L50 22.5 39.7 9.9s-17.7.4-35.3 8.5c4.5 6.8 13.5 10.1 13.5 10.1.6-6 4.8-7.4 18.1-7.4l14 78.7z"
+                  ></path>
+                  <path
+                    d="M50 6.3c14.2-.1 30.5 2.2 47.2 9.5 2.2-4 2.8-5.8 2.8-5.8C81.8 2.7 64.7.3 50 .2 35.3.3 18.2 2.7 0 10c0 0 .8 2.2 2.8 5.8 16.7-7.3 33-9.6 47.2-9.5z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+          </section>
+          <div
+            class="tw-chat--tds-card tw-chat--avaya-chat__status-card"
+            style="position: relative; left: 0px; bottom: 0px; display: none"
+          >
+            <div
+              class="tw-chat--tds-card-body tw-chat--tds-card-body-success tw-chat--avaya-chat__thank-you-body"
+              style="display: none"
+            >
+              <h6 class="tw-chat--avaya-chat__status-popup-header">
+                Thank you!
+              </h6>
+              <p class="tw-chat--avaya-chat__status-popup-text">
+                We will contact you soon.
+              </p>
+            </div>
+            <div
+              class="tw-chat--tds-card-body tw-chat--tds-card-body-error"
+              style="display: none"
+            >
+              <h6 class="tw-chat--avaya-chat__status-popup-header">
+                Something went wrong!
+              </h6>
+              <p class="tw-chat--avaya-chat__status-popup-text">
+                Please try again later.
+              </p>
+            </div>
+          </div>
+        </dialog>
+        <div class="tw-chat--tds-modal-backdrop"></div>
+      </div>
+    </div>
+  </body>
+</html>
